@@ -1047,6 +1047,9 @@ skills__subtitle {
     width: 200px;
     justify-self: center;
   }
+  .home__perfil img{
+    justify-content: center;
+  }
 }
 
 
