@@ -328,24 +328,32 @@ body.dark-theme {
   place-items: center;
   transition: background 0.4s; /* for dark mode animation */
 }
+/* Hide decorative shapes in home blob */
+.home__shape-wawes,
+.home__shape-circle {
+  display: none;
+}
 
 .home__perfil {
   width: 170px;
-  height: 260;
+  height: 260px;
   background: var(--gradient-color);
   border-radius: 5.5rem;
   overflow: hidden;
+
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: flex-end;
 }
 
 .home__perfil img {
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 100px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 30% center; /* move left */
+  display: block;
 }
-
+/**/
 .home__shape-wawes,
 .home__shape-circle {
   position: absolute;
