@@ -222,7 +222,7 @@ const typingTitle = document.getElementById("typing-title");
 
 let lineIndex = 0;
 let charIndex = 0;
-let typingSpeed = 40;
+let typingSpeed = 100;
 let linePause = 500;
 let fullTextPause = 2000;
 

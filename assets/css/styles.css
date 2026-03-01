@@ -353,6 +353,9 @@ body.dark-theme {
   object-position: 30% center; /* move left */
   display: block;
 }
+.home__title {
+  min-height: 3.8em; /* reserves space for all 3 lines */
+}
 /**/
 .home__shape-wawes,
 .home__shape-circle {
