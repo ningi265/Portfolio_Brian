@@ -214,3 +214,48 @@ sr.reveal(".skills__content:nth-child(2), .contact__content:nth-child(2)", {
   origin: "right",
 });
 sr.reveal(".qualification__content, .services__card", { interval: 100 });
+
+/*=============== ROW-BY-ROW TYPING EFFECT ===============*/
+const lines = ["Hi, I'm Brian", "FullStack Engineer", "Based In Zomba"];
+
+const typingTitle = document.getElementById("typing-title");
+
+let lineIndex = 0;
+let charIndex = 0;
+let typingSpeed = 40;
+let linePause = 500;
+let fullTextPause = 2000;
+
+function typeRowByRow() {
+  if (lineIndex < lines.length) {
+    const currentLine = lines[lineIndex];
+
+    if (charIndex <= currentLine.length) {
+      // Build text up to current line
+      const typedLines = lines.slice(0, lineIndex).join("<br />");
+
+      const currentTyped =
+        typedLines +
+        (lineIndex > 0 ? "<br />" : "") +
+        currentLine.slice(0, charIndex);
+
+      typingTitle.innerHTML = currentTyped;
+      charIndex++;
+      setTimeout(typeRowByRow, typingSpeed);
+    } else {
+      charIndex = 0;
+      lineIndex++;
+      setTimeout(typeRowByRow, linePause);
+    }
+  } else {
+    // Pause with full text shown, then restart
+    setTimeout(() => {
+      typingTitle.innerHTML = "";
+      lineIndex = 0;
+      charIndex = 0;
+      typeRowByRow();
+    }, fullTextPause);
+  }
+}
+
+typeRowByRow();
