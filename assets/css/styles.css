@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Inter:wght@400;500;600&family=Lora:wght@500;600&display=swap");
 
 /*=============== VARIABLES ===============*/
 :root {
@@ -6,35 +6,36 @@
   --radius: 1.25rem;
   --radius-sm: 0.75rem;
 
-  /* Dark is the default theme */
-  --bg: #0b0d10;
-  --surface: #12151a;
-  --surface-2: #181c23;
-  --border: #232832;
-  --title: #f4f6f8;
-  --text: #a6adba;
-  --muted: #6e7685;
-  --accent: #6cb4f0;
-  --accent-ink: #07131d;
-  --accent-soft: rgba(108, 180, 240, 0.12);
+  /* Warm "paper" light theme is the default. No gradients anywhere. */
+  --bg: #faf6f0;
+  --surface: #fffdf9;
+  --surface-2: #f3ede3;
+  --border: #e6dccd;
+  --title: #2b2420;
+  --text: #5a4f46;
+  --muted: #8a7d70;
+  --accent: #c2552b;
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(194, 85, 43, 0.1);
+  --tint: #f1dccd; /* flat colour behind the portrait */
 
   --font-body: "Inter", "Roboto", system-ui, sans-serif;
   --font-title: "Lora", Georgia, serif;
-  --shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  --font-hand: "Caveat", "Segoe Script", cursive;
 }
 
-body.light-theme {
-  --bg: #fafbfc;
-  --surface: #ffffff;
-  --surface-2: #f2f4f7;
-  --border: #e3e7ed;
-  --title: #12161c;
-  --text: #4a5260;
-  --muted: #7d8593;
-  --accent: #2f7fc4;
-  --accent-ink: #ffffff;
-  --accent-soft: rgba(47, 127, 196, 0.1);
-  --shadow: 0 10px 40px rgba(20, 30, 50, 0.08);
+body.dark-theme {
+  --bg: #171310;
+  --surface: #1f1a16;
+  --surface-2: #27211c;
+  --border: #38302a;
+  --title: #f5ede4;
+  --text: #b9ab9c;
+  --muted: #857869;
+  --accent: #ec8c5f;
+  --accent-ink: #1a0f08;
+  --accent-soft: rgba(236, 140, 95, 0.14);
+  --tint: #3a2a20;
 }
 
 /*=============== BASE ===============*/
@@ -53,8 +54,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: 1.02rem;
+  line-height: 1.75;
   background: var(--bg);
   color: var(--text);
   transition:
@@ -69,8 +70,13 @@ h3,
 h4 {
   color: var(--title);
   font-family: var(--font-title);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.2;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
 }
 
 ul,
@@ -122,26 +128,34 @@ button {
 }
 
 .section {
-  padding-block: 5rem;
+  padding-block: 6rem;
 }
 
 .section__head {
-  max-width: 44rem;
-  margin-bottom: 3rem;
+  max-width: 46rem;
+  margin-bottom: 3.5rem;
 }
 
 .eyebrow {
   display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-family: var(--font-hand);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1;
   color: var(--accent);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
+  transform: rotate(-1.5deg);
 }
 
 .section__title {
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-size: clamp(1.9rem, 4.2vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+.section__title em {
+  font-style: italic;
+  color: var(--accent);
 }
 
 /*=============== BUTTONS ===============*/
@@ -221,9 +235,10 @@ button {
 }
 
 .nav__logo {
-  font-family: var(--font-title);
+  font-family: var(--font-hand);
   font-weight: 600;
-  font-size: 1.35rem;
+  font-size: 2rem;
+  line-height: 1;
   color: var(--title);
 }
 .nav__logo span {
@@ -259,15 +274,6 @@ button {
   padding-top: calc(var(--header-h) + 4rem);
   padding-bottom: 5rem;
   overflow: hidden;
-}
-.hero__glow {
-  position: absolute;
-  width: 640px;
-  height: 640px;
-  right: -160px;
-  top: -120px;
-  background: radial-gradient(circle, var(--accent-soft), transparent 65%);
-  pointer-events: none;
 }
 .hero__container {
   position: relative;
@@ -306,13 +312,16 @@ button {
 }
 
 .hero__title {
-  font-size: clamp(2.25rem, 6vw, 4rem);
-  letter-spacing: -0.01em;
-  margin-bottom: 1.25rem;
-  min-height: 2.5em;
+  font-size: clamp(2.4rem, 6vw, 4.25rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  min-height: 2.3em;
 }
 .hero__typed {
   color: var(--accent);
+  font-style: italic;
 }
 .hero__caret {
   display: inline-block;
@@ -374,34 +383,13 @@ button {
   width: min(340px, 72vw);
   aspect-ratio: 4 / 5;
 }
-/* soft glow behind the portrait */
-.hero__frame::before {
-  content: "";
-  position: absolute;
-  inset: 8% -12% -6%;
-  background: radial-gradient(
-    closest-side,
-    var(--accent-soft),
-    transparent 75%
-  );
-  filter: blur(24px);
-  z-index: 0;
-}
-/* borderless arch: soft gradient that fades out at the bottom */
+/* borderless arch with a single flat colour behind the portrait */
 .hero__photo {
   position: absolute;
   inset: 0;
-  z-index: 1;
-  border-radius: 999px 999px 0 0;
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--accent) 22%, var(--surface)) 0%,
-    color-mix(in srgb, var(--accent) 6%, var(--surface)) 70%,
-    transparent 100%
-  );
+  border-radius: 999px 999px 1.5rem 1.5rem;
+  background: var(--tint);
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
-  mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
 }
 .hero__photo img {
   width: 100%;
@@ -414,21 +402,78 @@ button {
   transform: scale(1.04);
 }
 .hero__caption {
-  display: grid;
-  justify-items: center;
-  gap: 0.15rem;
-  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  font-family: var(--font-hand);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--accent);
+  transform: rotate(-2deg);
 }
-.hero__caption-name {
+.hero__caption svg {
+  width: 2.4rem;
+  height: auto;
+  margin-top: -1.1rem;
+  flex: none;
+}
+
+/* handwritten touches */
+.hand {
+  font-family: var(--font-hand);
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1.1;
+}
+.hero__hello {
+  display: inline-block;
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+}
+.scribble {
+  display: block;
+  width: 7.5rem;
+  height: 0.7rem;
+  margin-top: 0.1rem;
+  color: var(--accent);
+}
+.hero__hello-wrap {
+  margin-bottom: 1rem;
+}
+.note {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-size: 1.5rem;
+  transform: rotate(-1.5deg);
+}
+
+/*=============== STORY ===============*/
+.story {
+  max-width: 40rem;
+  margin-bottom: 4.5rem;
+}
+.story p {
   font-family: var(--font-title);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  line-height: 1.8;
   color: var(--title);
 }
-.hero__caption-role {
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
+.story p + p {
+  margin-top: 1.1rem;
+}
+.signature {
+  display: block;
+  margin-top: 1.25rem;
+  font-size: 2.2rem;
+  transform: rotate(-2deg);
+  transform-origin: left center;
+}
+.now {
+  display: inline-block;
+  margin-top: 0.25rem;
+  font-size: 1.3rem;
+  transform: rotate(-1.5deg);
 }
 
 /*=============== CARDS / BENTO ===============*/
@@ -460,7 +505,8 @@ button {
   font-size: 1.35rem;
 }
 .card--accent {
-  background: linear-gradient(135deg, var(--accent-soft), var(--surface));
+  background: var(--tint);
+  border-color: transparent;
 }
 .card--accent h3 {
   margin-top: 0;
@@ -469,14 +515,21 @@ button {
 
 .bento {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
 }
-.bento__lg {
+.bento > .card {
   grid-column: span 2;
 }
-.bento__wide {
-  grid-column: span 2;
+.bento > .bento__lg {
+  grid-column: span 4;
+}
+.bento > .card:nth-child(3),
+.bento > .card:nth-child(4) {
+  grid-column: span 3;
+}
+.bento > .bento__wide {
+  grid-column: 1 / -1;
 }
 
 .api-strip {
@@ -714,9 +767,7 @@ button {
 .project__media--placeholder {
   display: grid;
   place-items: center;
-  background:
-    radial-gradient(circle at 30% 20%, var(--accent-soft), transparent 70%),
-    var(--surface-2);
+  background: var(--tint);
 }
 .project__media--placeholder i {
   font-size: 3rem;
@@ -750,13 +801,15 @@ button {
 .why {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 3rem 2.5rem;
 }
 .why__item {
-  padding: 1.75rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  transition: border-color 0.25s;
+}
+.why__item:hover {
+  border-top-color: var(--accent);
 }
 .why__item i {
   font-size: 1.6rem;
@@ -785,8 +838,10 @@ button {
   border-top-color: var(--accent);
 }
 .process__num {
-  font-family: var(--font-title);
-  font-size: 1.6rem;
+  font-family: var(--font-hand);
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 1;
   color: var(--accent);
 }
 .process__step h3 {
@@ -803,28 +858,43 @@ button {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
+.reviews {
+  gap: 3rem 2.5rem;
+}
 .review {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: 1.75rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  gap: 1rem;
+}
+.review figcaption {
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+.review::before {
+  content: "\201C";
+  font-family: var(--font-title);
+  font-size: 4.5rem;
+  line-height: 0.6;
+  height: 2rem;
+  color: var(--accent);
 }
 .review blockquote {
   font-family: var(--font-title);
+  font-style: italic;
   color: var(--title);
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 1.05rem;
+  line-height: 1.8;
 }
 .review figcaption {
   display: grid;
   font-size: 0.9rem;
 }
 .review figcaption strong {
-  color: var(--title);
+  font-family: var(--font-hand);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--accent);
 }
 .review figcaption span {
   font-size: 0.8rem;
@@ -836,13 +906,15 @@ button {
   padding: clamp(1.75rem, 5vw, 4rem);
   border: 1px solid var(--border);
   border-radius: calc(var(--radius) * 1.5);
-  background:
-    radial-gradient(circle at 100% 0, var(--accent-soft), transparent 55%),
-    var(--surface);
+  background: var(--surface);
 }
 .cta > p {
   max-width: 34rem;
-  margin: 1rem 0 2.5rem;
+  margin: 1rem 0 0.5rem;
+}
+.cta .note {
+  display: block;
+  margin: 0 0 2.75rem;
 }
 .contact {
   display: grid;
@@ -893,10 +965,11 @@ a.contact__row:hover {
 .contact__form textarea {
   font: inherit;
   color: var(--title);
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 0.85rem 1rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  padding: 0.7rem 0.1rem;
   transition: border-color 0.2s;
 }
 .contact__form input:focus,
@@ -983,8 +1056,8 @@ a.contact__row:hover {
   opacity: 0;
   transform: translateY(22px);
   transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+    opacity 0.9s ease,
+    transform 0.9s ease;
 }
 .reveal.is-visible {
   opacity: 1;
@@ -1039,9 +1112,14 @@ a.contact__row:hover {
   .reviews {
     grid-template-columns: repeat(2, 1fr);
   }
-  .bento__lg,
-  .bento__wide {
-    grid-column: span 2;
+  .bento > .card,
+  .bento > .card:nth-child(3),
+  .bento > .card:nth-child(4) {
+    grid-column: auto;
+  }
+  .bento > .bento__lg,
+  .bento > .bento__wide {
+    grid-column: 1 / -1;
   }
   .process {
     grid-template-columns: repeat(2, 1fr);
@@ -1084,7 +1162,10 @@ a.contact__row:hover {
 
 @media (max-width: 600px) {
   .section {
-    padding-block: 3.5rem;
+    padding-block: 4rem;
+  }
+  .hero__caption {
+    justify-content: center;
   }
   .bento,
   .projects,
@@ -1093,8 +1174,8 @@ a.contact__row:hover {
   .process {
     grid-template-columns: 1fr;
   }
-  .bento__lg,
-  .bento__wide {
+  .bento > .bento__lg,
+  .bento > .bento__wide {
     grid-column: auto;
   }
   .stats {

@@ -12,7 +12,7 @@
       property="og:description"
       content="Full-Stack Engineer based in Zomba, Malawi."
     />
-    <meta name="theme-color" content="#0b0d10" />
+    <meta name="theme-color" content="#faf6f0" />
 
     <link
       rel="shortcut icon"
@@ -33,7 +33,7 @@
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
       <nav class="nav container" aria-label="Primary">
-        <a href="#home" class="nav__logo">BM<span>.</span></a>
+        <a href="#home" class="nav__logo">Brian<span>.</span></a>
 
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
@@ -72,21 +72,32 @@
     <main id="main">
       <!--==================== HOME ====================-->
       <section class="hero" id="home">
-        <div class="hero__glow" aria-hidden="true"></div>
         <div class="container hero__container">
           <div class="hero__content">
-            <span class="pill"
-              ><span class="pill__dot"></span> Available for new projects</span
-            >
+            <div class="hero__hello-wrap">
+              <span class="hand hero__hello">Hello, I'm Brian</span>
+              <svg
+                class="scribble"
+                viewBox="0 0 120 10"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                aria-hidden="true"
+              >
+                <path d="M2 6 C 14 1, 22 9, 36 5 S 60 2, 74 6 S 100 8, 118 3" />
+              </svg>
+            </div>
             <h1 class="hero__title">
-              Full-Stack Engineer<br />
-              <span class="hero__typed" id="typing-title"></span
+              I build software<br />
+              people <span class="hero__typed" id="typing-title"></span
               ><span class="hero__caret" aria-hidden="true"></span>
             </h1>
             <p class="hero__text">
-              I'm Brian, based in Zomba, Malawi. I design and ship responsive
-              web and mobile systems, from the database to the interface and out
-              to production.
+              I'm a full-stack engineer from Zomba, Malawi. I like turning
+              messy, real-world problems into web and mobile apps that feel
+              simple to use, and I'm happy to stay with a project from the first
+              sketch to launch day and beyond.
             </p>
 
             <div class="hero__buttons">
@@ -143,10 +154,19 @@
               </div>
             </div>
             <div class="hero__caption">
-              <span class="hero__caption-name">Brian Mtonga</span>
-              <span class="hero__caption-role"
-                >Full-Stack Engineer · Zomba</span
+              <svg
+                viewBox="0 0 40 40"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
               >
+                <path d="M34 36 C 20 36, 8 28, 7 8" />
+                <path d="M2 14 L 7 7 L 13 13" />
+              </svg>
+              <span>that's me, in Zomba!</span>
             </div>
           </div>
         </div>
@@ -156,11 +176,27 @@
       <section class="section" id="about">
         <div class="container">
           <header class="section__head reveal">
-            <span class="eyebrow">About</span>
+            <span class="eyebrow">a little about me</span>
             <h2 class="section__title">
-              Engineer who cares how software feels to use.
+              I care about how software <em>feels</em> to the people using it.
             </h2>
           </header>
+
+          <div class="story reveal">
+            <p>
+              I studied for my BSc at the University of Malawi, then trained as
+              a software engineer with Holberton School and ALX Africa. Since
+              then I've built software for schools, hospitals, businesses and
+              marketplaces, from a school management system to medical software
+              and a gig platform in Sweden.
+            </p>
+            <p>
+              These days I'm a software engineer at Niveosystems, working from
+              Zomba. What I enjoy most is the moment a real person uses
+              something I built and it simply works for them.
+            </p>
+            <span class="hand signature">— Brian</span>
+          </div>
 
           <div class="bento">
             <article class="card bento__lg reveal">
@@ -205,10 +241,11 @@
             </article>
 
             <article class="card card--accent bento__wide reveal">
-              <h3>Building systems people actually adopt.</h3>
+              <h3>Software that people actually adopt.</h3>
               <p>
-                Schools, businesses and startups across Malawi and beyond trust
-                me to turn rough ideas into dependable products.
+                Schools, businesses and startups, here in Malawi and abroad,
+                have trusted me to turn a rough idea into something dependable.
+                I listen first, then build.
               </p>
             </article>
           </div>
@@ -237,9 +274,10 @@
       <section class="section" id="skills">
         <div class="container">
           <header class="section__head reveal">
-            <span class="eyebrow">Tools &amp; technologies</span>
+            <span class="eyebrow">what I work with</span>
             <h2 class="section__title">
-              One stack for the whole job, from interface to infrastructure.
+              One toolbox for the whole job,
+              <em>from interface to infrastructure</em>.
             </h2>
           </header>
 
@@ -401,9 +439,9 @@
       <section class="section" id="experience">
         <div class="container">
           <header class="section__head reveal">
-            <span class="eyebrow">Experience</span>
+            <span class="eyebrow">where I've been</span>
             <h2 class="section__title">
-              A timeline of the work and learning behind the code.
+              The work and learning <em>behind the code</em>.
             </h2>
           </header>
 
@@ -414,7 +452,13 @@
               </h3>
               <ol class="timeline">
                 <li class="timeline__item reveal">
-                  <span class="timeline__date">2024 — Present</span>
+                  <span class="timeline__date">Mar 2026 — Present</span>
+                  <h4>Software Engineer</h4>
+                  <p class="timeline__org">Niveosystems</p>
+                  <span class="hand now">← where I am now</span>
+                </li>
+                <li class="timeline__item reveal">
+                  <span class="timeline__date">2024 — Feb 2026</span>
                   <h4>Software Engineer</h4>
                   <p class="timeline__org">Business on Software</p>
                 </li>
@@ -463,9 +507,9 @@
       <section class="section" id="projects">
         <div class="container">
           <header class="section__head reveal">
-            <span class="eyebrow">Selected work</span>
+            <span class="eyebrow">things I've made</span>
             <h2 class="section__title">
-              Software that helps businesses move faster.
+              Software that helps people <em>get things done</em>.
             </h2>
           </header>
 
@@ -653,8 +697,10 @@
       <section class="section" id="why-me">
         <div class="container">
           <header class="section__head reveal">
-            <span class="eyebrow">Why choose me</span>
-            <h2 class="section__title">What sets my work apart.</h2>
+            <span class="eyebrow">working together</span>
+            <h2 class="section__title">
+              What you can <em>count on</em> when we work together.
+            </h2>
           </header>
 
           <div class="why">
@@ -662,37 +708,49 @@
               <i class="ri-shield-check-line"></i>
               <h3>Security</h3>
               <p>
-                Safe authentication, validated input and careful data handling.
+                I treat your users' data the way I'd want mine treated: safe
+                sign-in, validated input, nothing left to chance.
               </p>
             </div>
             <div class="why__item reveal">
               <i class="ri-flashlight-line"></i>
               <h3>Fast performance</h3>
-              <p>Lean bundles and efficient queries so apps feel instant.</p>
+              <p>
+                I keep things lean, so pages open quickly even on a patchy
+                connection.
+              </p>
             </div>
             <div class="why__item reveal">
               <i class="ri-lightbulb-flash-line"></i>
               <h3>Innovation</h3>
               <p>
-                Practical use of modern tools, including AI, where it helps.
+                I'm curious about new tools, AI included, and I use them when
+                they genuinely help, not just because they're new.
               </p>
             </div>
             <div class="why__item reveal">
               <i class="ri-file-text-line"></i>
               <h3>Documentation</h3>
-              <p>Clear docs and handover so your team can keep moving.</p>
+              <p>
+                I write things down, so your team can pick the project up
+                without needing me on call.
+              </p>
             </div>
             <div class="why__item reveal">
               <i class="ri-time-line"></i>
               <h3>Timely delivery</h3>
               <p>
-                Realistic scopes and regular updates, no surprises at the end.
+                I'll give you an honest timeline and keep you posted along the
+                way, so there are no surprises.
               </p>
             </div>
             <div class="why__item reveal">
               <i class="ri-verified-badge-line"></i>
               <h3>Quality assurance</h3>
-              <p>Tested, reviewed and checked on real devices before launch.</p>
+              <p>
+                I test on real devices and review my own work before anything
+                reaches you.
+              </p>
             </div>
           </div>
         </div>
@@ -702,35 +760,39 @@
       <section class="section" id="process">
         <div class="container">
           <header class="section__head reveal">
-            <span class="eyebrow">Process</span>
-            <h2 class="section__title">How ideas become shipped products.</h2>
+            <span class="eyebrow">how I work</span>
+            <h2 class="section__title">
+              How an idea becomes <em>something real</em>.
+            </h2>
           </header>
 
           <ol class="process">
             <li class="process__step reveal">
               <span class="process__num">01</span>
               <h3>Discover</h3>
-              <p>Understand the goals, users and constraints.</p>
+              <p>
+                We talk. I listen to your goals, your users and your limits.
+              </p>
             </li>
             <li class="process__step reveal">
               <span class="process__num">02</span>
               <h3>Design</h3>
-              <p>Wireframes and prototypes you can react to early.</p>
+              <p>I sketch wireframes and prototypes you can react to early.</p>
             </li>
             <li class="process__step reveal">
               <span class="process__num">03</span>
               <h3>Build</h3>
-              <p>Iterative development with regular demos.</p>
+              <p>I build in small steps and show you progress as we go.</p>
             </li>
             <li class="process__step reveal">
               <span class="process__num">04</span>
               <h3>Launch</h3>
-              <p>Deployment, monitoring and a smooth handover.</p>
+              <p>We go live together, with monitoring and a calm handover.</p>
             </li>
             <li class="process__step reveal">
               <span class="process__num">05</span>
               <h3>Iterate</h3>
-              <p>Improve with real feedback and usage data.</p>
+              <p>Real feedback shapes what we improve next.</p>
             </li>
           </ol>
         </div>
@@ -740,17 +802,19 @@
       <section class="section" id="reviews">
         <div class="container">
           <header class="section__head reveal">
-            <span class="eyebrow">Reviews</span>
-            <h2 class="section__title">Kind words from clients.</h2>
+            <span class="eyebrow">kind words</span>
+            <h2 class="section__title">
+              What people I've <em>worked with</em> say.
+            </h2>
           </header>
 
           <div class="reviews">
             <figure class="review reveal">
               <blockquote>
-                “Brian was a pleasure to work with. He delivered a high-quality
+                Brian was a pleasure to work with. He delivered a high-quality
                 solution at a fair cost, paid close attention to details, and
                 ensured the project met all expectations. I would gladly work
-                with him again.”
+                with him again.
               </blockquote>
               <figcaption>
                 <strong>Gregg Blazer</strong><span>Client</span>
@@ -759,9 +823,9 @@
 
             <figure class="review reveal">
               <blockquote>
-                “Working with Brian is exceptional. He carried out my project at
+                Working with Brian is exceptional. He carried out my project at
                 a good cost, with excellent quality and attention. Great service
-                and recommended.”
+                and recommended.
               </blockquote>
               <figcaption>
                 <strong>Mulunguzi Secondary School</strong><span>Client</span>
@@ -770,10 +834,10 @@
 
             <figure class="review reveal">
               <blockquote>
-                “Brian demonstrated strong technical expertise and
+                Brian demonstrated strong technical expertise and
                 professionalism throughout the project. The work was delivered
                 efficiently, with great attention to detail and quality. I would
-                confidently recommend him for future projects.”
+                confidently recommend him for future projects.
               </blockquote>
               <figcaption>
                 <strong>Niveosystems</strong><span>Client</span>
@@ -787,12 +851,16 @@
       <section class="section" id="contact">
         <div class="container">
           <div class="cta reveal">
-            <span class="eyebrow">Contact</span>
-            <h2 class="section__title">Let's work together.</h2>
+            <span class="eyebrow">say hello</span>
+            <h2 class="section__title">
+              Let's make something <em>good</em> together.
+            </h2>
             <p>
-              Have a project in mind or want to talk collaboration? Send a
-              message and I'll get back to you.
+              Got an idea, a problem to solve, or just a question? Tell me a
+              little about it. I read every message myself and I'll reply
+              personally.
             </p>
+            <span class="hand note">No pressure, just say hi.</span>
 
             <div class="contact">
               <div class="contact__info">
@@ -865,7 +933,7 @@
     <footer class="footer">
       <div class="container footer__container">
         <div class="footer__top">
-          <a href="#home" class="nav__logo">BM<span>.</span></a>
+          <a href="#home" class="nav__logo">Brian<span>.</span></a>
           <ul class="footer__list">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -896,8 +964,8 @@
         </div>
         <div class="footer__bottom">
           <span
-            >&#169; <span id="year">2026</span> Brian Mtonga. All rights
-            reserved.</span
+            >&#169; <span id="year">2026</span> Brian Mtonga · Made with care in
+            Zomba, Malawi.</span
           >
           <a href="#home">Back to top <i class="ri-arrow-up-line"></i></a>
         </div>

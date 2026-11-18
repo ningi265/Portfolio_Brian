@@ -22,26 +22,26 @@ const themeButton = document.getElementById("theme-button");
 const themeIcon = themeButton.querySelector("i");
 
 function applyTheme(theme) {
-  document.body.classList.toggle("light-theme", theme === "light");
-  themeIcon.className = theme === "light" ? "ri-sun-line" : "ri-moon-line";
+  document.body.classList.toggle("dark-theme", theme === "dark");
+  themeIcon.className = theme === "dark" ? "ri-sun-line" : "ri-moon-line";
   document
     .querySelector('meta[name="theme-color"]')
-    ?.setAttribute("content", theme === "light" ? "#fafbfc" : "#0b0d10");
+    ?.setAttribute("content", theme === "dark" ? "#171310" : "#faf6f0");
 }
 
 let savedTheme = null;
 try {
-  savedTheme = localStorage.getItem("selected-theme");
+  savedTheme = localStorage.getItem("selected-theme-v2");
 } catch (e) {}
-applyTheme(savedTheme || "dark");
+applyTheme(savedTheme || "light");
 
 themeButton.addEventListener("click", () => {
-  const next = document.body.classList.contains("light-theme")
-    ? "dark"
-    : "light";
+  const next = document.body.classList.contains("dark-theme")
+    ? "light"
+    : "dark";
   applyTheme(next);
   try {
-    localStorage.setItem("selected-theme", next);
+    localStorage.setItem("selected-theme-v2", next);
   } catch (e) {}
 });
 
@@ -115,11 +115,7 @@ counters.forEach((c) => countObserver.observe(c));
 
 /*=============== TYPING TITLE ===============*/
 const typed = document.getElementById("typing-title");
-const phrases = [
-  "building responsive systems.",
-  "shipping web & mobile apps.",
-  "turning ideas into products.",
-];
+const phrases = ["enjoy using.", "can rely on.", "actually adopt."];
 const reduceMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
