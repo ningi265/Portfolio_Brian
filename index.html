@@ -3,892 +3,907 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Brian Mtonga is a Full-Stack Engineer building responsive web and mobile systems with React, Node.js, Python and cloud tooling."
+    />
+    <meta property="og:title" content="Brian Mtonga | Portfolio" />
+    <meta
+      property="og:description"
+      content="Full-Stack Engineer based in Zomba, Malawi."
+    />
+    <meta name="theme-color" content="#0b0d10" />
 
-    <!--=============== FAVICON ===============-->
     <link
       rel="shortcut icon"
       href="assets/img/favicon.png"
       type="image/x-icon"
     />
-
-    <!--=============== REMIXICONS ===============-->
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-
-    <!--=============== SWIPER CSS ===============-->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
-
-    <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css" />
 
-    <title>Brian Mtonga responsive portfolio</title>
+    <title>Brian Mtonga | Portfolio</title>
   </head>
   <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
-      <nav class="nav container">
-        <a href="#" class="nav__logo"> Brian </a>
+      <nav class="nav container" aria-label="Primary">
+        <a href="#home" class="nav__logo">BM<span>.</span></a>
+
         <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list grid">
-            <li class="nav__item">
-              <a href="#home" class="nav__link active-link">
-                <i class="ri-home-5-line"></i> Home
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#skills" class="nav__link">
-                <i class="ri-trophy-line"></i> Skills
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#qualification" class="nav__link">
-                <i class="ri-book-open-line"></i> Qualification
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#services" class="nav__link">
-                <i class="ri-briefcase-line"></i> Services
-              </a>
-            </li>
-
-            <li class="nav__item">
-              <a href="#projects" class="nav__link">
-                <i class="ri-image-line"></i> Projects
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#contact" class="nav__link">
-                <i class="ri-chat-3-line"></i> Contact
-              </a>
-            </li>
+          <ul class="nav__list">
+            <li><a href="#about" class="nav__link">About</a></li>
+            <li><a href="#skills" class="nav__link">Skills</a></li>
+            <li><a href="#experience" class="nav__link">Experience</a></li>
+            <li><a href="#projects" class="nav__link">Projects</a></li>
+            <li><a href="#why-me" class="nav__link">Why Me</a></li>
+            <li><a href="#contact" class="nav__link">Contact</a></li>
           </ul>
-
-          <!--Close button-->
-          <div class="nav__close" id="nav-close">
-            <i class="ri-close-line"></i>
-          </div>
         </div>
 
-        <div class="nav__buttons">
-          <!--Theme change button-->
-          <i class="ri-moon-line change-theme" id="theme-button"></i>
-
-          <!--Toggle button-->
-          <div class="nav__toggle" id="nav-toggle">
+        <div class="nav__actions">
+          <button
+            class="icon-btn"
+            id="theme-button"
+            aria-label="Toggle theme"
+            type="button"
+          >
+            <i class="ri-moon-line"></i>
+          </button>
+          <a href="#contact" class="btn btn--sm nav__cta">Let's talk</a>
+          <button
+            class="icon-btn nav__toggle"
+            id="nav-toggle"
+            aria-label="Open menu"
+            aria-expanded="false"
+            type="button"
+          >
             <i class="ri-menu-4-line"></i>
-          </div>
+          </button>
         </div>
       </nav>
     </header>
 
-    <!--==================== MAIN ====================-->
-    <main class="main">
+    <main id="main">
       <!--==================== HOME ====================-->
-      <section class="home section" id="home">
-        <div class="home__container container grid section__border">
-          <div class="home__data grid">
-            <h1 class="home__title" id="typing-title"></h1>
+      <section class="hero" id="home">
+        <div class="hero__glow" aria-hidden="true"></div>
+        <div class="container hero__container">
+          <div class="hero__content">
+            <span class="pill"
+              ><span class="pill__dot"></span> Available for new projects</span
+            >
+            <h1 class="hero__title">
+              Full-Stack Engineer<br />
+              <span class="hero__typed" id="typing-title"></span
+              ><span class="hero__caret" aria-hidden="true"></span>
+            </h1>
+            <p class="hero__text">
+              I'm Brian, based in Zomba, Malawi. I design and ship responsive
+              web and mobile systems, from the database to the interface and out
+              to production.
+            </p>
 
-            <div class="home__blob grid">
-              <div class="home__perfil">
-                <img
-                  src="assets/img/background-Photoroom.png"
-                  alt="home perfil"
-                />
-              </div>
-
-              <img
-                src="assets/img/shape-wawes.svg"
-                alt=""
-                class="home__shape-wawes"
-              />
-              <img
-                src="assets/img/shape-circle.svg"
-                alt=""
-                class="home__shape-circle"
-              />
-            </div>
-
-            <ul class="home__social">
-              <a
-                href="https://www.linkedin.com/in/bryan-mtonga-02413a242/"
-                target="_blank"
-                class="home_-social-link"
-              >
-                <i class="ri-linkedin-box-line"></i>
-              </a>
-              <a
-                href="https://github.com/ningi265"
-                target="_blank"
-                class="home_-social-link"
-              >
-                <i class="ri-github-line"></i>
-              </a>
-              <a
-                href="https://dribbble.com/brianmtonga592"
-                target="_blank"
-                class="home_-social-link"
-              >
-                <i class="ri-dribbble-line"></i>
-              </a>
-            </ul>
-          </div>
-
-          <!--HOME INFO 1-->
-          <div class="home__info">
-            <div>
-              <h3 class="home__info-title">BIOGRAPHY</h3>
-              <p class="home__info-decription">
-                Hi, I'm Brian, FullStack Engineer. Passionate about developing
-                responsive systems. Based in Zomba.
-              </p>
-            </div>
-            <div>
-              <h3 class="home__info-title">CONTACT</h3>
-              <p class="home__info-decription">
-                Zomba, Malawi <br />
-                brianmtonga592@gmail.com <br />
-                +265880474443 <br />
-              </p>
-            </div>
-            <div>
-              <h3 class="home__info-title">SERVICES</h3>
-              <p class="home__info-decription">
-                Front-End Development <br />
-                Back-End Development <br />
-                Database Management <br />
-                API Development <br />
-                Version Control <br />
-                Deployment and DevOps <br />
-              </p>
-            </div>
-          </div>
-
-          <!--HOME INFO 2-->
-
-          <div class="home__info">
-            <div>
-              <h3 class="home__info-title">YEARS OF EXPERIENCE</h3>
-              <p class="home__info-number">05+</p>
-            </div>
-            <div>
-              <h3 class="home__info-title">COMPLETED PROJECTS</h3>
-              <p class="home__info-number">15+</p>
-            </div>
-            <div>
-              <h3 class="home__info-title">COMPANIES WORKED</h3>
-              <p class="home__info-number">05+</p>
-
+            <div class="hero__buttons">
               <a
                 href="assets/resume/Brian_Mtonga_Resume_2026.pdf"
                 class="btn"
                 download="Brian_Mtonga_Resume_2026.pdf"
               >
-                Download CV</a
+                <i class="ri-download-2-line"></i> My Resume
+              </a>
+              <a href="#contact" class="btn btn--ghost">
+                Get in Touch <i class="ri-arrow-right-up-line"></i>
+              </a>
+            </div>
+
+            <ul class="hero__social">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/bryan-mtonga-02413a242/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  ><i class="ri-linkedin-box-line"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/ningi265"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="GitHub"
+                  ><i class="ri-github-line"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://dribbble.com/brianmtonga592"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Dribbble"
+                  ><i class="ri-dribbble-line"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero__visual">
+            <div class="hero__frame">
+              <div class="hero__photo">
+                <img
+                  src="assets/img/background-Photoroom.png"
+                  alt="Portrait of Brian Mtonga"
+                />
+              </div>
+            </div>
+            <div class="hero__caption">
+              <span class="hero__caption-name">Brian Mtonga</span>
+              <span class="hero__caption-role"
+                >Full-Stack Engineer · Zomba</span
               >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== ABOUT ====================-->
+      <section class="section" id="about">
+        <div class="container">
+          <header class="section__head reveal">
+            <span class="eyebrow">About</span>
+            <h2 class="section__title">
+              Engineer who cares how software feels to use.
+            </h2>
+          </header>
+
+          <div class="bento">
+            <article class="card bento__lg reveal">
+              <i class="card__icon ri-stack-line"></i>
+              <h3>Full-stack development</h3>
+              <p>
+                End-to-end systems with React, Node.js, Python and Django.
+                Responsive interfaces backed by APIs and databases built to
+                scale.
+              </p>
+              <div class="api-strip" aria-hidden="true">
+                <span>GET</span><span>POST</span><span>PUT</span
+                ><span>DELETE</span>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <i class="card__icon ri-smartphone-line"></i>
+              <h3>Mobile apps</h3>
+              <p>
+                Cross-platform apps for iOS and Android with React Native and
+                Flutter.
+              </p>
+            </article>
+
+            <article class="card reveal">
+              <i class="card__icon ri-cloud-line"></i>
+              <h3>Deployment &amp; DevOps</h3>
+              <p>
+                Docker, Kubernetes and cloud hosting so releases are repeatable
+                and calm.
+              </p>
+            </article>
+
+            <article class="card reveal">
+              <i class="card__icon ri-database-2-line"></i>
+              <h3>Data &amp; APIs</h3>
+              <p>
+                MongoDB, MySQL, PostgreSQL and Prisma behind clean, documented
+                REST APIs.
+              </p>
+            </article>
+
+            <article class="card card--accent bento__wide reveal">
+              <h3>Building systems people actually adopt.</h3>
+              <p>
+                Schools, businesses and startups across Malawi and beyond trust
+                me to turn rough ideas into dependable products.
+              </p>
+            </article>
+          </div>
+
+          <div class="stats reveal">
+            <div class="stat">
+              <span class="stat__num" data-count="5">0</span
+              ><span class="stat__plus">+</span>
+              <p>Years of professional experience</p>
+            </div>
+            <div class="stat">
+              <span class="stat__num" data-count="15">0</span
+              ><span class="stat__plus">+</span>
+              <p>Projects completed</p>
+            </div>
+            <div class="stat">
+              <span class="stat__num" data-count="5">0</span
+              ><span class="stat__plus">+</span>
+              <p>Companies worked with</p>
             </div>
           </div>
         </div>
       </section>
 
       <!--==================== SKILLS ====================-->
-      <section class="skills section" id="skills">
-        <h2 class="section__title">Skills</h2>
-        <span class="section__subtitle"></span>
+      <section class="section" id="skills">
+        <div class="container">
+          <header class="section__head reveal">
+            <span class="eyebrow">Tools &amp; technologies</span>
+            <h2 class="section__title">
+              One stack for the whole job, from interface to infrastructure.
+            </h2>
+          </header>
 
-        <div class="skills__container container grid section__border">
-          <!--Skills 1-->
-          <div class="skills__content">
-            <h3 class="skills__title">
-              <i class="ri-braces-line"></i> Frontend Developer
-            </h3>
-
-            <div class="skills__info">
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/html-1.svg" alt="HTML5" />
-                </div>
-                <h3 class="skills__name">HTML5</h3>
-                <span class="skills_subtitle">Advanced</span>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/css-3.svg" alt="CSS3" />
-                </div>
-                <h3 class="skills__name">CSS3</h3>
-                <span class="skills_subtitle">Advanced</span>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/logo-javascript.svg" alt="JavaScript" />
-                </div>
-                <h3 class="skills__name">JavaScript</h3>
-                <span class="skills_subtitle">Advanced</span>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/react-2.svg" alt="React" />
-                </div>
-                <h3 class="skills__name">React</h3>
-                <span class="skills_subtitle">Intermediate</span>
-              </div>
+          <div class="skills">
+            <!-- Frontend -->
+            <div class="skills__group reveal">
+              <h3 class="skills__title">
+                <i class="ri-braces-line"></i> Frontend
+              </h3>
+              <ul class="skills__grid">
+                <li class="skill">
+                  <img src="assets/img/html-1.svg" alt="" /><span>HTML5</span
+                  ><em>Advanced</em>
+                </li>
+                <li class="skill">
+                  <img src="assets/img/css-3.svg" alt="" /><span>CSS3</span
+                  ><em>Advanced</em>
+                </li>
+                <li class="skill">
+                  <img src="assets/img/logo-javascript.svg" alt="" /><span
+                    >JavaScript</span
+                  ><em>Advanced</em>
+                </li>
+                <li class="skill">
+                  <img src="assets/img/react-2.svg" alt="" /><span>React</span
+                  ><em>Intermediate</em>
+                </li>
+              </ul>
             </div>
-          </div>
-          <!--Skills 2-->
-          <div class="skills__content">
-            <h3 class="skills__title">
-              <i class="ri-terminal-box-fill"></i> Backend Development
-            </h3>
 
-            <div class="skills__info">
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/nodejs-icon.svg" alt="Python" />
-                </div>
-                <h3 class="skills__name">Node JS</h3>
-                <span class="skills_subtitle">Advanced</span>
-              </div>
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/python-5.svg" alt="Python" />
-                </div>
-                <h3 class="skills__name">Python</h3>
-                <span class="skills_subtitle">Advanced</span>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/django.svg" alt="Django" />
-                </div>
-                <h3 class="skills__name">Django</h3>
-                <span class="skills_subtitle">Intermediate</span>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/php.png" alt="PHP" />
-                </div>
-                <h3 class="skills__name">PHP</h3>
-                <span class="skills_subtitle">Intermediate</span>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/laravel-2.svg" alt="Laravel" />
-                </div>
-                <h3 class="skills__name">Laravel</h3>
-                <span class="skills_subtitle">Intermediate</span>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/c-1.svg" alt="C" />
-                </div>
-                <h3 class="skills__name">C</h3>
-                <span class="skills_subtitle">Intermediate</span>
-              </div>
+            <!-- Backend -->
+            <div class="skills__group reveal">
+              <h3 class="skills__title">
+                <i class="ri-terminal-box-fill"></i> Backend
+              </h3>
+              <ul class="skills__grid">
+                <li class="skill">
+                  <img src="assets/img/nodejs-icon.svg" alt="" /><span
+                    >Node JS</span
+                  ><em>Advanced</em>
+                </li>
+                <li class="skill">
+                  <img src="assets/img/python-5.svg" alt="" /><span>Python</span
+                  ><em>Advanced</em>
+                </li>
+                <li class="skill">
+                  <img src="assets/img/django.svg" alt="" /><span>Django</span
+                  ><em>Intermediate</em>
+                </li>
+                <li class="skill">
+                  <img src="assets/img/php.png" alt="" /><span>PHP</span
+                  ><em>Intermediate</em>
+                </li>
+                <li class="skill">
+                  <img src="assets/img/laravel-2.svg" alt="" /><span
+                    >Laravel</span
+                  ><em>Intermediate</em>
+                </li>
+                <li class="skill">
+                  <img src="assets/img/c-1.svg" alt="" /><span>C</span
+                  ><em>Intermediate</em>
+                </li>
+              </ul>
             </div>
-          </div>
-          <!--Skills 3-->
-          <div class="skills__content">
-            <h3 class="skills__title">
-              <i class="ri-database-2-line"></i> Databases
-            </h3>
 
-            <div class="skills__info">
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/mongodb-icon-1.svg" alt="MySQL" />
-                </div>
-                <h3 class="skills__name">MongoDB</h3>
-                <span class="skills_subtitle">Advanced</span>
-              </div>
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/mysql-icon.png" alt="MySQL" />
-                </div>
-                <h3 class="skills__name">MySQL</h3>
-                <span class="skills_subtitle">Advanced</span>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/postgresql-icon.png" alt="PostgreSQL" />
-                </div>
-                <h3 class="skills__name">PostgreSQL</h3>
-                <span class="skills_subtitle">Intermediate</span>
-              </div>
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/prisma.svg" alt="PostgreSQL" />
-                </div>
-                <h3 class="skills__name">Prisma DB</h3>
-                <span class="skills_subtitle">Intermediate</span>
-              </div>
+            <!-- Databases -->
+            <div class="skills__group reveal">
+              <h3 class="skills__title">
+                <i class="ri-database-2-line"></i> Databases
+              </h3>
+              <ul class="skills__grid">
+                <li class="skill">
+                  <img src="assets/img/mongodb-icon-1.svg" alt="" /><span
+                    >MongoDB</span
+                  ><em>Advanced</em>
+                </li>
+                <li class="skill">
+                  <img src="assets/img/mysql-icon.png" alt="" /><span
+                    >MySQL</span
+                  ><em>Advanced</em>
+                </li>
+                <li class="skill">
+                  <img src="assets/img/postgresql-icon.png" alt="" /><span
+                    >PostgreSQL</span
+                  ><em>Intermediate</em>
+                </li>
+                <li class="skill">
+                  <img src="assets/img/prisma.svg" alt="" /><span
+                    >Prisma DB</span
+                  ><em>Intermediate</em>
+                </li>
+              </ul>
             </div>
-          </div>
-          <!--Skills 4-->
-          <div class="skills__content">
-            <h3 class="skills__title"><i class="ri-cloud-line"></i> DevOps</h3>
 
-            <div class="skills__info">
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/git-icon.svg" alt="Git" />
-                </div>
-                <h3 class="skills__name">Git</h3>
-                <span class="skills_subtitle">Advanced</span>
-              </div>
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/icons8-bash-100.png" alt="Bash" />
-                </div>
-                <h3 class="skills__name">Bash</h3>
-                <span class="skills_subtitle">Intermediate</span>
-              </div>
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/docker-icon.png" alt="Docker" />
-                </div>
-                <h3 class="skills__name">Docker</h3>
-                <span class="skills_subtitle">Intermediate</span>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img
-                    src="assets/img/icons8-kubernetes-48.png"
-                    alt="Kubernetes"
-                  />
-                </div>
-                <h3 class="skills__name">Kubernetes</h3>
-                <span class="skills_subtitle">Intermediate</span>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/aws-icon.png" alt="AWS" />
-                </div>
-                <h3 class="skills__name">AWS</h3>
-                <span class="skills_subtitle">Beginner</span>
-              </div>
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/kindpng_3498.png" alt="AWS" />
-                </div>
-                <h3 class="skills__name">Oracle Cloud</h3>
-                <span class="skills_subtitle">Intermidiate</span>
-              </div>
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/cpanel-icon.png" alt="cPanel" />
-                </div>
-                <h3 class="skills__name">cPanel</h3>
-                <span class="skills_subtitle">Intermediate</span>
-              </div>
+            <!-- DevOps -->
+            <div class="skills__group reveal">
+              <h3 class="skills__title">
+                <i class="ri-cloud-line"></i> DevOps
+              </h3>
+              <ul class="skills__grid">
+                <li class="skill">
+                  <img src="assets/img/git-icon.svg" alt="" /><span>Git</span
+                  ><em>Advanced</em>
+                </li>
+                <li class="skill">
+                  <img src="assets/img/icons8-bash-100.png" alt="" /><span
+                    >Bash</span
+                  ><em>Intermediate</em>
+                </li>
+                <li class="skill">
+                  <img src="assets/img/docker-icon.png" alt="" /><span
+                    >Docker</span
+                  ><em>Intermediate</em>
+                </li>
+                <li class="skill">
+                  <img src="assets/img/icons8-kubernetes-48.png" alt="" /><span
+                    >Kubernetes</span
+                  ><em>Intermediate</em>
+                </li>
+                <li class="skill">
+                  <img src="assets/img/aws-icon.png" alt="" /><span>AWS</span
+                  ><em>Beginner</em>
+                </li>
+                <li class="skill">
+                  <img src="assets/img/kindpng_3498.png" alt="" /><span
+                    >Oracle Cloud</span
+                  ><em>Intermediate</em>
+                </li>
+                <li class="skill">
+                  <img src="assets/img/cpanel-icon.png" alt="" /><span
+                    >cPanel</span
+                  ><em>Intermediate</em>
+                </li>
+              </ul>
             </div>
-          </div>
 
-          <!--Skills 5-->
-          <div class="skills__content">
-            <h3 class="skills__title">
-              <i class="ri-smartphone-line"></i> Mobile Development
-            </h3>
-
-            <div class="skills__info">
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/flutter.svg" alt="Flutter" />
-                </div>
-                <h3 class="skills__name">Flutter</h3>
-                <span class="skills_subtitle">Intermediate</span>
-              </div>
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="assets/img/react-native-1.svg" alt="Flutter" />
-                </div>
-                <h3 class="skills__name">React Native</h3>
-                <span class="skills_subtitle">Advanced</span>
-              </div>
+            <!-- Mobile -->
+            <div class="skills__group reveal">
+              <h3 class="skills__title">
+                <i class="ri-smartphone-line"></i> Mobile
+              </h3>
+              <ul class="skills__grid">
+                <li class="skill">
+                  <img src="assets/img/flutter.svg" alt="" /><span>Flutter</span
+                  ><em>Intermediate</em>
+                </li>
+                <li class="skill">
+                  <img src="assets/img/react-native-1.svg" alt="" /><span
+                    >React Native</span
+                  ><em>Advanced</em>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <!--==================== QUALIFICATION ====================-->
-      <section class="qualification section" id="qualification">
-        <h2 class="section__title">Qualification</h2>
-        <span class="section__subtitle">Experience & Education</span>
+      <!--==================== EXPERIENCE ====================-->
+      <section class="section" id="experience">
+        <div class="container">
+          <header class="section__head reveal">
+            <span class="eyebrow">Experience</span>
+            <h2 class="section__title">
+              A timeline of the work and learning behind the code.
+            </h2>
+          </header>
 
-        <div class="qualification__container container grid section__border">
-          <!--QUALIFICATION 1-->
-          <div class="qualification__content">
-            <h3 class="qualification__title">
-              <i class="ri-pencil-ruler-2-line"></i> Education
-            </h3>
-
-            <div class="qualification__info">
-              <div>
-                <h3 class="qualification__name">Bachelor of Science</h3>
-                <span class="qualification__country">University of Malawi</span>
-                <span class="qualification__year">2017 - 2021</span>
-              </div>
-
-              <div>
-                <h3 class="qualification__name">Software Engineering</h3>
-                <span class="qualification__country"
-                  >Hoberton School of Computer Science-ALX Africa</span
-                >
-                <span class="qualification__year">2022-2023</span>
-              </div>
-
-              <div>
-                <h3 class="qualification__name"></h3>
-                <span class="qualification__country"></span>
-                <span class="qualification__year"></span>
-              </div>
+          <div class="split">
+            <div>
+              <h3 class="split__title">
+                <i class="ri-building-line"></i> Work
+              </h3>
+              <ol class="timeline">
+                <li class="timeline__item reveal">
+                  <span class="timeline__date">2024 — Present</span>
+                  <h4>Software Engineer</h4>
+                  <p class="timeline__org">Business on Software</p>
+                </li>
+                <li class="timeline__item reveal">
+                  <span class="timeline__date">2023 — 2025</span>
+                  <h4>Part-Time Instructor</h4>
+                  <p class="timeline__org">University of Malawi</p>
+                </li>
+                <li class="timeline__item reveal">
+                  <span class="timeline__date">2022 — 2023</span>
+                  <h4>Research Analyst</h4>
+                  <p class="timeline__org">Save the Children</p>
+                </li>
+                <li class="timeline__item reveal">
+                  <span class="timeline__date">2021 — 2024</span>
+                  <h4>FullStack Developer</h4>
+                  <p class="timeline__org">OviTreats-Malawi</p>
+                </li>
+              </ol>
             </div>
-          </div>
 
-          <!--QUALIFICATION 2-->
-          <div class="qualification__content">
-            <h3 class="qualification__title">
-              <i class="ri-building-line"></i> Work
-            </h3>
-
-            <div class="qualification__info">
-              <div>
-                <h3 class="qualification__name">FullStack Developer</h3>
-                <span class="qualification__country">OviTreats-Malawi</span>
-                <span class="qualification__year">2021-2024</span>
-              </div>
-
-              <div>
-                <h3 class="qualification__name">Research Analyst</h3>
-                <span class="qualification__country">Save the Children</span>
-                <span class="qualification__year">2022-2023</span>
-              </div>
-
-              <div>
-                <h3 class="qualification__name">Part-Time Instructor</h3>
-                <span class="qualification__country">University of Malawi</span>
-                <span class="qualification__year">2023-2025</span>
-              </div>
-
-              <div>
-                <h3 class="qualification__name">Software Engineer</h3>
-                <span class="qualification__country">Business on Software</span>
-                <span class="qualification__year">2024-Present</span>
-              </div>
+            <div>
+              <h3 class="split__title">
+                <i class="ri-pencil-ruler-2-line"></i> Education
+              </h3>
+              <ol class="timeline">
+                <li class="timeline__item reveal">
+                  <span class="timeline__date">2022 — 2023</span>
+                  <h4>Software Engineering</h4>
+                  <p class="timeline__org">
+                    Holberton School of Computer Science · ALX Africa
+                  </p>
+                </li>
+                <li class="timeline__item reveal">
+                  <span class="timeline__date">2017 — 2021</span>
+                  <h4>Bachelor of Science</h4>
+                  <p class="timeline__org">University of Malawi</p>
+                </li>
+              </ol>
             </div>
-          </div>
-        </div>
-
-        <img
-          src="assets/img/shape-circle.svg"
-          alt="qualification image"
-          class="qualification__img"
-        />
-      </section>
-
-      <!--==================== SERVICES ====================-->
-      <section class="services section" id="services">
-        <h2 class="section__title">Services</h2>
-        <span class="section__subtitle">What I offer</span>
-
-        <div class="services__container container grid section__border">
-          <div class="services__card">
-            <i class="ri-code-s-slash-line"></i>
-
-            <h2 class="services__title">Full-Stack<br />Development</h2>
-
-            <p class="services__description">
-              End-to-end web development using modern technologies like Django,
-              React, and Python. From database design to responsive frontend.
-            </p>
-
-            <div class="services__border"></div>
-          </div>
-
-          <div class="services__card">
-            <i class="ri-android-line"></i>
-            <h2 class="services__title">Mobile App Development</h2>
-
-            <p class="services__description">
-              I offer end-to-end responsive mobile app development, from concept
-              to deployment,for both iOS & Android.
-            </p>
-
-            <div class="services__border"></div>
-          </div>
-
-          <div class="services__card">
-            <i class="ri-cloud-line"></i>
-
-            <h2 class="services__title">DevOps <br /></h2>
-
-            <p class="services__description">
-              I offer comprehensive DevOps services aimed at enhancing the
-              development, deployment, and operation of Software applications.
-            </p>
-
-            <div class="services__border"></div>
-          </div>
-
-          <div class="services__card">
-            <i class="ri-layout-4-line"></i>
-
-            <h2 class="services__title">UI/UX <br /></h2>
-
-            <p class="services__description">
-              I craft intuitive user interfaces and seamless user experiences
-              that engage and delight. From wireframes to interactive
-              prototypes, I design with both aesthetics and usability in mind.
-            </p>
-
-            <div class="services__border"></div>
           </div>
         </div>
       </section>
 
       <!--==================== PROJECTS ====================-->
-      <section class="projects section" id="projects">
-        <h2 class="section__title">Projects</h2>
-        <span class="section__subtitle">Most recent work</span>
+      <section class="section" id="projects">
+        <div class="container">
+          <header class="section__head reveal">
+            <span class="eyebrow">Selected work</span>
+            <h2 class="section__title">
+              Software that helps businesses move faster.
+            </h2>
+          </header>
 
-        <div class="container section__border">
-          <div class="projects__container swiper">
-            <div class="swiper-wrapper">
-              <!--==================== PROJECT 1====================-->
-              <div class="projects__content swiper-slide">
-                <img
-                  src="assets/img/nexusmwi.png"
-                  alt="projects image"
-                  class="projects__img"
-                />
+          <div
+            class="filters reveal"
+            role="tablist"
+            aria-label="Project filter"
+          >
+            <button class="filter is-active" data-filter="all" type="button">
+              All Projects
+            </button>
+            <button class="filter" data-filter="web" type="button">
+              Web Apps
+            </button>
+            <button class="filter" data-filter="mobile" type="button">
+              Mobile Apps
+            </button>
+            <button class="filter" data-filter="desktop" type="button">
+              Desktop Apps
+            </button>
+            <button class="filter" data-filter="tools" type="button">
+              AI &amp; Tooling
+            </button>
+          </div>
 
-                <div>
-                  <span class="projects__subtitle">Full Stack App</span>
-                  <h1 class="projects__title">NexusMWI</h1>
-
-                  <a
-                    href="https://app.nexusmwi.com"
-                    target="_blank"
-                    class="projects__button"
-                  >
-                    View website <i class="ri-arrow-right-line"></i>
-                  </a>
-                </div>
+          <div class="projects">
+            <article class="project" data-category="web mobile">
+              <div class="project__media project__media--placeholder">
+                <i class="ri-heart-pulse-line"></i>
               </div>
-
-              <!--==================== PROJECT 2====================-->
-
-              <div class="projects__content swiper-slide">
-                <img
-                  src="assets/img/vavicky.png"
-                  alt="projects image"
-                  class="projects__img"
-                />
-
-                <div>
-                  <span class="projects__subtitle">Web App</span>
-                  <h1 class="projects__title">VaVicky</h1>
-
-                  <a
-                    href="https://app.vavicky.com"
-                    target="_blank"
-                    class="projects__button"
-                  >
-                    View website <i class="ri-arrow-right-line"></i>
-                  </a>
-                </div>
+              <div class="project__body">
+                <span class="project__tag">Web App &amp; Mobile App</span>
+                <h3>NiveoCare</h3>
+                <p class="project__desc">
+                  Medical and hospital management software, available as a web
+                  app and a mobile app.
+                </p>
+                <a
+                  href="https://app.niveocare.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="link-arrow"
+                  >View website <i class="ri-arrow-right-up-line"></i
+                ></a>
               </div>
+            </article>
 
-              <!--==================== PROJECT 3====================-->
-              <div class="projects__content swiper-slide">
+            <article class="project" data-category="web">
+              <div class="project__media project__media--placeholder">
+                <i class="ri-user-star-line"></i>
+              </div>
+              <div class="project__body">
+                <span class="project__tag">Marketplace Platform</span>
+                <h3>Flexxio</h3>
+                <p class="project__desc">
+                  A platform in Sweden where professionals find gigs and clients
+                  find the right professionals.
+                </p>
+                <a
+                  href="https://flexxio.se"
+                  target="_blank"
+                  rel="noopener"
+                  class="link-arrow"
+                  >View website <i class="ri-arrow-right-up-line"></i
+                ></a>
+              </div>
+            </article>
+
+            <article class="project" data-category="web mobile desktop">
+              <div class="project__media project__media--placeholder">
+                <i class="ri-graduation-cap-line"></i>
+              </div>
+              <div class="project__body">
+                <span class="project__tag">Desktop · Mobile · Web</span>
+                <h3>FutEdu</h3>
+                <p class="project__desc">
+                  A school suite: a desktop app for library management, a mobile
+                  app for grade entry and a web app for school management.
+                </p>
+                <a
+                  href="https://futecedu.nexusmwi.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="link-arrow"
+                  >View website <i class="ri-arrow-right-up-line"></i
+                ></a>
+              </div>
+            </article>
+
+            <article class="project" data-category="web">
+              <div class="project__media">
+                <img src="assets/img/nexusmwi.png" alt="NexusMWI screenshot" />
+              </div>
+              <div class="project__body">
+                <span class="project__tag">Full Stack App</span>
+                <h3>NexusMWI</h3>
+                <a
+                  href="https://app.nexusmwi.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="link-arrow"
+                  >View website <i class="ri-arrow-right-up-line"></i
+                ></a>
+              </div>
+            </article>
+
+            <article class="project" data-category="web">
+              <div class="project__media">
+                <img src="assets/img/vavicky.png" alt="VaVicky screenshot" />
+              </div>
+              <div class="project__body">
+                <span class="project__tag">Web App</span>
+                <h3>VaVicky</h3>
+                <a
+                  href="https://app.vavicky.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="link-arrow"
+                  >View website <i class="ri-arrow-right-up-line"></i
+                ></a>
+              </div>
+            </article>
+
+            <article class="project" data-category="web">
+              <div class="project__media">
                 <img
                   src="assets/img/sms.png"
-                  alt="projects image"
-                  class="projects__img"
+                  alt="School Management screenshot"
                 />
-
-                <div>
-                  <span class="projects__subtitle">Full Stack App</span>
-                  <h1 class="projects__title">School Management</h1>
-
-                  <a href="https://sms.mlzss.com" class="projects__button">
-                    View website <i class="ri-arrow-right-line"></i>
-                  </a>
-                </div>
               </div>
-
-              <!--==================== PROJECT 3====================-->
-              <div class="projects__content swiper-slide">
-                <img
-                  src="assets/img/project1.jpg"
-                  alt="projects image"
-                  class="projects__img"
-                />
-
-                <div>
-                  <span class="projects__subtitle">AI Agent MCP server</span>
-                  <h1 class="projects__title">MCP Voice AI</h1>
-
-                  <a
-                    href="https://github.com/Business-On-Steroids/MCP-VoiceAI-WhiteLabel"
-                    class="projects__button"
-                  >
-                    View repository <i class="ri-arrow-right-line"></i>
-                  </a>
-                </div>
+              <div class="project__body">
+                <span class="project__tag">Full Stack App</span>
+                <h3>School Management</h3>
+                <a
+                  href="https://sms.mlzss.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="link-arrow"
+                  >View website <i class="ri-arrow-right-up-line"></i
+                ></a>
               </div>
+            </article>
 
-              <!--==================== PROJECT 4====================-->
+            <article class="project" data-category="tools">
+              <div class="project__media">
+                <img src="assets/img/project1.jpg" alt="MCP Voice AI preview" />
+              </div>
+              <div class="project__body">
+                <span class="project__tag">AI Agent MCP server</span>
+                <h3>MCP Voice AI</h3>
+                <a
+                  href="https://github.com/Business-On-Steroids/MCP-VoiceAI-WhiteLabel"
+                  target="_blank"
+                  rel="noopener"
+                  class="link-arrow"
+                  >View repository <i class="ri-arrow-right-up-line"></i
+                ></a>
+              </div>
+            </article>
 
-              <div class="projects__content swiper-slide">
+            <article class="project" data-category="tools">
+              <div class="project__media">
                 <img
                   src="assets/img/project4.jpg"
-                  alt="projects image"
-                  class="projects__img"
+                  alt="Voice AI node preview"
                 />
-
-                <div>
-                  <span class="projects__subtitle">n8n node</span>
-                  <h1 class="projects__title">Voice AI node</h1>
-
-                  <a
-                    href="https://github.com/Business-On-Steroids/n8n-nodes-voiceai"
-                    class="projects__button"
-                  >
-                    View repository <i class="ri-arrow-right-line"></i>
-                  </a>
-                </div>
               </div>
-            </div>
-            <!--SWIPER ARROWS-->
-            <div class="swiper-button-next">
-              <i class="ri-arrow-right-s-line"></i>
-            </div>
-            <div class="swiper-button-prev">
-              <i class="ri-arrow-left-s-line"></i>
-            </div>
-
-            <!--SWIPER PAGINATION-->
-            <div class="swiper-pagination"></div>
+              <div class="project__body">
+                <span class="project__tag">n8n node</span>
+                <h3>Voice AI node</h3>
+                <a
+                  href="https://github.com/Business-On-Steroids/n8n-nodes-voiceai"
+                  target="_blank"
+                  rel="noopener"
+                  class="link-arrow"
+                  >View repository <i class="ri-arrow-right-up-line"></i
+                ></a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <!--==================== TESTIMONIAL ====================-->
-      <section class="testimonial section">
-        <h2 class="section__title">Reviews</h2>
-        <span class="section__subtitle"></span>
+      <!--==================== WHY ME ====================-->
+      <section class="section" id="why-me">
+        <div class="container">
+          <header class="section__head reveal">
+            <span class="eyebrow">Why choose me</span>
+            <h2 class="section__title">What sets my work apart.</h2>
+          </header>
 
-        <div class="container section__border">
-          <div class="testimonial__container swiper">
-            <div class="swiper-wrapper">
-              <!--==================== TESTIMONIAL 1 ====================-->
-              <div class="testimonial__content swiper-slide">
-                <p class="testimonial__description">
-                  “Brian was a pleasure to work with. He delivered a
-                  high-quality solution at a fair cost, paid close attention to
-                  details, and ensured the project met all expectations. I would
-                  gladly work with him again.”
-                </p>
-
-                <div>
-                  <h3 class="testimonial__name">Gregg Blazer</h3>
-                  <span class="testimonial__subtitle">Client</span>
-                </div>
-              </div>
-
-              <!--==================== TESTIMONIAL 2 ====================-->
-              <div class="testimonial__content swiper-slide">
-                <p class="testimonial__description">
-                  "Working with Brian is exceptional, He carried out my project
-                  at a good cost, with exellent quality and attention. Great
-                  service and recommended."
-                </p>
-
-                <div>
-                  <h3 class="testimonial__name">Mulunguzi Secondary School</h3>
-                  <span class="testimonial__subtitle">Client</span>
-                </div>
-              </div>
-
-              <!--==================== TESTIMONIAL 3 ====================-->
-              <div class="testimonial__content swiper-slide">
-                <p class="testimonial__description">
-                  “Brian demonstrated strong technical expertise and
-                  professionalism throughout the project. The work was delivered
-                  efficiently, with great attention to detail and quality. I
-                  would confidently recommend him for future projects.”
-                </p>
-
-                <div>
-                  <h3 class="testimonial__name">Niveosystems</h3>
-                  <span class="testimonial__subtitle">Client</span>
-                </div>
-              </div>
+          <div class="why">
+            <div class="why__item reveal">
+              <i class="ri-shield-check-line"></i>
+              <h3>Security</h3>
+              <p>
+                Safe authentication, validated input and careful data handling.
+              </p>
             </div>
-            <!--Swiper class-->
-            <div class="swiper-button-next">
-              <i class="ri-arrow-right-s-line"></i>
+            <div class="why__item reveal">
+              <i class="ri-flashlight-line"></i>
+              <h3>Fast performance</h3>
+              <p>Lean bundles and efficient queries so apps feel instant.</p>
             </div>
-            <div class="swiper-button-prev">
-              <i class="ri-arrow-left-s-line"></i>
+            <div class="why__item reveal">
+              <i class="ri-lightbulb-flash-line"></i>
+              <h3>Innovation</h3>
+              <p>
+                Practical use of modern tools, including AI, where it helps.
+              </p>
+            </div>
+            <div class="why__item reveal">
+              <i class="ri-file-text-line"></i>
+              <h3>Documentation</h3>
+              <p>Clear docs and handover so your team can keep moving.</p>
+            </div>
+            <div class="why__item reveal">
+              <i class="ri-time-line"></i>
+              <h3>Timely delivery</h3>
+              <p>
+                Realistic scopes and regular updates, no surprises at the end.
+              </p>
+            </div>
+            <div class="why__item reveal">
+              <i class="ri-verified-badge-line"></i>
+              <h3>Quality assurance</h3>
+              <p>Tested, reviewed and checked on real devices before launch.</p>
             </div>
           </div>
         </div>
+      </section>
 
-        <img
-          src="assets/img/shape-wawes.svg"
-          alt="testimonial image"
-          class="testimonial__img"
-        />
+      <!--==================== PROCESS ====================-->
+      <section class="section" id="process">
+        <div class="container">
+          <header class="section__head reveal">
+            <span class="eyebrow">Process</span>
+            <h2 class="section__title">How ideas become shipped products.</h2>
+          </header>
+
+          <ol class="process">
+            <li class="process__step reveal">
+              <span class="process__num">01</span>
+              <h3>Discover</h3>
+              <p>Understand the goals, users and constraints.</p>
+            </li>
+            <li class="process__step reveal">
+              <span class="process__num">02</span>
+              <h3>Design</h3>
+              <p>Wireframes and prototypes you can react to early.</p>
+            </li>
+            <li class="process__step reveal">
+              <span class="process__num">03</span>
+              <h3>Build</h3>
+              <p>Iterative development with regular demos.</p>
+            </li>
+            <li class="process__step reveal">
+              <span class="process__num">04</span>
+              <h3>Launch</h3>
+              <p>Deployment, monitoring and a smooth handover.</p>
+            </li>
+            <li class="process__step reveal">
+              <span class="process__num">05</span>
+              <h3>Iterate</h3>
+              <p>Improve with real feedback and usage data.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!--==================== REVIEWS ====================-->
+      <section class="section" id="reviews">
+        <div class="container">
+          <header class="section__head reveal">
+            <span class="eyebrow">Reviews</span>
+            <h2 class="section__title">Kind words from clients.</h2>
+          </header>
+
+          <div class="reviews">
+            <figure class="review reveal">
+              <blockquote>
+                “Brian was a pleasure to work with. He delivered a high-quality
+                solution at a fair cost, paid close attention to details, and
+                ensured the project met all expectations. I would gladly work
+                with him again.”
+              </blockquote>
+              <figcaption>
+                <strong>Gregg Blazer</strong><span>Client</span>
+              </figcaption>
+            </figure>
+
+            <figure class="review reveal">
+              <blockquote>
+                “Working with Brian is exceptional. He carried out my project at
+                a good cost, with excellent quality and attention. Great service
+                and recommended.”
+              </blockquote>
+              <figcaption>
+                <strong>Mulunguzi Secondary School</strong><span>Client</span>
+              </figcaption>
+            </figure>
+
+            <figure class="review reveal">
+              <blockquote>
+                “Brian demonstrated strong technical expertise and
+                professionalism throughout the project. The work was delivered
+                efficiently, with great attention to detail and quality. I would
+                confidently recommend him for future projects.”
+              </blockquote>
+              <figcaption>
+                <strong>Niveosystems</strong><span>Client</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
       </section>
 
       <!--==================== CONTACT ====================-->
-      <section class="contact section" id="contact">
-        <h2 class="section__title">Contact Me</h2>
-        <span class="section__subtitle">Get in touch</span>
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="cta reveal">
+            <span class="eyebrow">Contact</span>
+            <h2 class="section__title">Let's work together.</h2>
+            <p>
+              Have a project in mind or want to talk collaboration? Send a
+              message and I'll get back to you.
+            </p>
 
-        <div class="contact__container container grid section__border">
-          <div class="contact__content">
-            <h3 class="contact__title">
-              <i class="ri-chat-3-line"></i> Talk to me
-            </h3>
-
-            <div class="contact__info">
-              <div class="contact__data">
-                <span class="contact__data-title">Email</span>
-                <span class="contact__data-info">brianmtonga592@gmail.com</span>
-              </div>
-
-              <div class="contact__data">
-                <span class="contact__data-title">Whatsapp</span>
-                <span class="contact__data-info">+265880474443</span>
-                <!--insert a real number plus country code-->
+            <div class="contact">
+              <div class="contact__info">
+                <a href="mailto:brianmtonga592@gmail.com" class="contact__row">
+                  <i class="ri-mail-line"></i>
+                  <span><small>Email</small>brianmtonga592@gmail.com</span>
+                </a>
                 <a
                   href="https://api.whatsapp.com/send?phone=265880474443&text=Hello, more information!"
                   target="_blank"
-                  class="contact__button"
+                  rel="noopener"
+                  class="contact__row"
                 >
-                  Write me <i class="ri-arrow-right-line"></i>
+                  <i class="ri-whatsapp-line"></i>
+                  <span><small>WhatsApp</small>+265 880 474 443</span>
                 </a>
+                <div class="contact__row">
+                  <i class="ri-map-pin-line"></i>
+                  <span><small>Location</small>Zomba, Malawi</span>
+                </div>
               </div>
+
+              <form class="contact__form" id="contact-form">
+                <label>
+                  Name
+                  <input
+                    type="text"
+                    name="user_name"
+                    id="contact-name"
+                    required
+                    placeholder="Your name"
+                  />
+                </label>
+                <label>
+                  Email
+                  <input
+                    type="email"
+                    name="user_email"
+                    id="contact-email"
+                    required
+                    placeholder="you@example.com"
+                  />
+                </label>
+                <label>
+                  Project
+                  <textarea
+                    name="user_project"
+                    id="contact-project"
+                    rows="5"
+                    required
+                    placeholder="Tell me about your project"
+                  ></textarea>
+                </label>
+                <p
+                  class="contact__message"
+                  id="contact-message"
+                  role="status"
+                ></p>
+                <button type="submit" class="btn">
+                  Send message <i class="ri-send-plane-line"></i>
+                </button>
+              </form>
             </div>
-          </div>
-          <div class="contact__content">
-            <h3 class="contact__title">
-              <i class="ri-send-plane-line"></i> Write me your project
-            </h3>
-            <form action="" class="contact__form" id="contact-form">
-              <div class="contact__form-div">
-                <label class="contact__form-tag">Names</label>
-                <input
-                  type="text"
-                  name="user_name"
-                  required
-                  placeholder="Write your names"
-                  class="contact__form-input"
-                  id="contact-name"
-                />
-              </div>
-              <div class="contact__form-div">
-                <label class="contact__form-tag">Mail</label>
-                <input
-                  type="text"
-                  name="user_email"
-                  required
-                  placeholder="Write your email"
-                  class="contact__form-input"
-                  id="contact-email"
-                />
-              </div>
-              <div class="contact__form-div contact__form-area">
-                <label class="contact__form-tag">Project</label>
-                <textarea
-                  name="user_project"
-                  placeholder="Write your project"
-                  id="contact-project"
-                  cols="30"
-                  rows="10"
-                  class="contact__form-input"
-                ></textarea>
-              </div>
-              <p class="contact__message" id="contact-message"></p>
-              <button type="submit" class="contact__button">
-                Submit <i class="ri-arrow-right-up-line"></i>
-              </button>
-            </form>
           </div>
         </div>
       </section>
     </main>
+
     <!--==================== FOOTER ====================-->
     <footer class="footer">
-      <div class="footer__container container">
-        <h1 class="footer__title">Brian</h1>
-        <p class="Fullstack Engineer"></p>
-
-        <ul class="footer__list">
-          <li>
-            <a href="#home" class="footer__link">Home</a>
-          </li>
-          <li>
-            <a href="#skills" class="footer__link">Skills</a>
-          </li>
-          <li>
-            <a href="#projects" class="footer__link">Projects</a>
-          </li>
-        </ul>
-        <ul class="footer__social">
-          <a
-            href="https://www.linkedin.com/in/bryan-mtonga-02413a242/"
-            target="_blank"
-            class="footer__social-link"
+      <div class="container footer__container">
+        <div class="footer__top">
+          <a href="#home" class="nav__logo">BM<span>.</span></a>
+          <ul class="footer__list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <ul class="footer__social">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/bryan-mtonga-02413a242/"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+                ><i class="ri-linkedin-box-line"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/ningi265"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub"
+                ><i class="ri-github-line"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__bottom">
+          <span
+            >&#169; <span id="year">2026</span> Brian Mtonga. All rights
+            reserved.</span
           >
-            <i class="ri-linkedin-box-line"></i>
-          </a>
-          <a
-            href="https://github.com/ningi265"
-            target="_blank"
-            class="footer__social-link"
-          >
-            <i class="ri-github-line"></i>
-          </a>
-          <a href="" target="_blank" class="footer__social-link"> </a>
-        </ul>
-        <span class="footer__copy">
-          &#169; Copyright LEGEND 2024. All rights reserved
-        </span>
+          <a href="#home">Back to top <i class="ri-arrow-up-line"></i></a>
+        </div>
       </div>
     </footer>
 
-    <!--========== SCROLL UP ==========-->
-    <a href="#" class="scrollup" id="scroll-up">
-      <i class="ri-arrow-up-line"></i>
-    </a>
-
-    <!--=============== SCROLLREVEAL ===============-->
-    <script src="assets/js/scrollreveal.min.js"></script>
-
-    <!--=============== SWIPER JS ===============-->
-    <script src="assets/js/swiper-bundle.min.js"></script>
-
-    <!--=============== EMAIL JS ===============-->
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-
-    <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
   </body>
 </html>

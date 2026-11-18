@@ -1,261 +1,197 @@
-/*=============== SHOW MENU ===============*/
-const navMenu = document.getElementById("nav-menu"),
-  navToggle = document.getElementById("nav-toggle"),
-  navClose = document.getElementById("nav-close");
+/*=============== MENU ===============*/
+const navMenu = document.getElementById("nav-menu");
+const navToggle = document.getElementById("nav-toggle");
 
-/* Menu show */
-if (navToggle) {
-  navToggle.addEventListener("click", () => {
-    navMenu.classList.add("show-menu");
-  });
+function setMenu(open) {
+  navMenu.classList.toggle("show-menu", open);
+  navToggle.setAttribute("aria-expanded", String(open));
+  navToggle.innerHTML = open
+    ? '<i class="ri-close-line"></i>'
+    : '<i class="ri-menu-4-line"></i>';
 }
 
-/* Menu hidden */
-if (navClose) {
-  navClose.addEventListener("click", () => {
-    navMenu.classList.remove("show-menu");
-  });
-}
-
-/*=============== REMOVE MENU MOBILE ===============*/
-const navLink = document.querySelectorAll(".nav__link");
-
-const linkAction = () => {
-  const navMenu = document.getElementById("nav-menu");
-  // When we click on each nav__link, we remove the show-menu class
-  navMenu.classList.remove("show-menu");
-};
-navLink.forEach((n) => n.addEventListener("click", linkAction));
-
-/*=============== SWIPER PROJECTS ===============*/
-let swiperProjects = new Swiper(".projects__container", {
-  loop: true,
-  spaceBetween: 24,
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-  },
-  breakpoints: {
-    1200: {
-      slidesPerView: 2,
-      spaceBetween: -56,
-    },
-  },
-});
-
-/*=============== SWIPER TESTIMONIAL ===============*/
-let swiperTestimonial = new Swiper(".testimonial__container", {
-  grabCursor: true,
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
-/*=============== EMAIL JS ===============*/
-const contactForm = document.getElementById("contact-form"),
-  contactName = document.getElementById("contact-name"),
-  contactEmail = document.getElementById("contact-email"),
-  contactProject = document.getElementById("contact-project"),
-  contactMessage = document.getElementById("contact-message");
-
-const sendEmail = (e) => {
-  e.preventDefault();
-
-  //check if the field has a value
-  if (
-    contactName.value === "" ||
-    contactEmail.value === "" ||
-    contactProject.value === ""
-  ) {
-    //add and remove color
-    contactMessage.classList.remove("color-blue");
-    contactMessage.classList.add("color-red");
-
-    //show message
-    contactMessage.textContent = "Fill all the fields";
-  } else {
-    //serviceID - templateID - #form - publicKey
-    emailjs
-      .sendForm(
-        "service_nqtn73z",
-        "template_rmwbz1g",
-        "#contact-form",
-        "-41I9jQsJvSbPEpq5",
-      )
-      .then(
-        () => {
-          //show message and add color
-          contactMessage.classList.add("color-blue");
-          contactMessage.textContent = "Message sent ✅";
-
-          setTimeout(() => {
-            contactMessage.textContent = "";
-          }, 5000);
-        },
-        (error) => {
-          alert("OOPS! SOMETHING WENT WRONG...", error);
-        },
-      );
-
-    //To clear the input field
-    contactName.value = "";
-    contactEmail.value = "";
-    contactProject.value = "";
-  }
-};
-contactForm.addEventListener("submit", sendEmail);
-
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-const sections = document.querySelectorAll("section[id]");
-
-const scrollActive = () => {
-  const scrollY = window.pageYOffset;
-
-  sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight,
-      sectionTop = current.offsetTop - 58,
-      sectionId = current.getAttribute("id"),
-      sectionsClass = document.querySelector(
-        ".nav__menu a[href*=" + sectionId + "]",
-      );
-
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      sectionsClass.classList.add("active-link");
-    } else {
-      sectionsClass.classList.remove("active-link");
-    }
-  });
-};
-window.addEventListener("scroll", scrollActive);
-
-/*=============== SHOW SCROLL UP ===============*/
-const scrollUp = () => {
-  const scrollUp = document.getElementById("scroll-up");
-  // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
-  this.scrollY >= 350
-    ? scrollUp.classList.add("show-scroll")
-    : scrollUp.classList.remove("show-scroll");
-};
-window.addEventListener("scroll", scrollUp);
-
-/*=============== DARK LIGHT THEME ===============*/
-const themeButton = document.getElementById("theme-button");
-const darkTheme = "dark-theme";
-const iconTheme = "ri-sun-line";
-
-/* 👉 MAKE DARK THEME DEFAULT */
-document.body.classList.add(darkTheme);
-themeButton.classList.add(iconTheme);
-
-// Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem("selected-theme");
-const selectedIcon = localStorage.getItem("selected-icon");
-
-// We obtain the current theme that the interface has by validating the dark-theme class
-const getCurrentTheme = () =>
-  document.body.classList.contains(darkTheme) ? "dark" : "light";
-const getCurrentIcon = () =>
-  themeButton.classList.contains(iconTheme) ? "ri-moon-line" : "ri-sun-line";
-
-// We validate if the user previously chose a topic
-if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
-    darkTheme,
-  );
-  themeButton.classList[selectedIcon === "ri-moon-line" ? "add" : "remove"](
-    iconTheme,
-  );
-}
-
-// Activate / deactivate the theme manually with the button
-themeButton.addEventListener("click", () => {
-  // Add or remove the dark / icon theme
-  document.body.classList.toggle(darkTheme);
-  themeButton.classList.toggle(iconTheme);
-  // We save the theme and the current icon that the user chose
-  localStorage.setItem("selected-theme", getCurrentTheme());
-  localStorage.setItem("selected-icon", getCurrentIcon());
-});
-
-/*=============== CHANGE BACKGROUND HEADER ===============*/
-const scrollHeader = () => {
-  const header = document.getElementById("header");
-  // Add a class if the bottom offset is greater than 50 of the viewport
-  this.scrollY >= 50
-    ? header.classList.add("bg-header")
-    : header.classList.remove("bg-header");
-};
-window.addEventListener("scroll", scrollHeader);
-
-/*=============== SCROLL REVEAL ANIMATION ===============*/
-const sr = ScrollReveal({
-  origin: "top",
-  distance: "60px",
-  duration: 2500,
-  delay: 400,
-  //reset:true /*Animations repeat */
-});
-
-sr.reveal(
-  ".home__data, .projects__container, .testimonial__container, .footer__container",
+navToggle.addEventListener("click", () =>
+  setMenu(!navMenu.classList.contains("show-menu")),
 );
-sr.reveal(".home__info div", { delay: 600, origin: "bottom", interval: 100 });
-sr.reveal(".skills__content:nth-child(1), .contact__content:nth-child(1)", {
-  origin: "left",
-});
-sr.reveal(".skills__content:nth-child(2), .contact__content:nth-child(2)", {
-  origin: "right",
-});
-sr.reveal(".qualification__content, .services__card", { interval: 100 });
+document
+  .querySelectorAll(".nav__link")
+  .forEach((link) => link.addEventListener("click", () => setMenu(false)));
 
-/*=============== ROW-BY-ROW TYPING EFFECT ===============*/
-const lines = ["Hi, I'm Brian", "FullStack Engineer", "Based In Zomba"];
+/*=============== THEME ===============*/
+const themeButton = document.getElementById("theme-button");
+const themeIcon = themeButton.querySelector("i");
 
-const typingTitle = document.getElementById("typing-title");
-
-let lineIndex = 0;
-let charIndex = 0;
-let typingSpeed = 100;
-let linePause = 500;
-let fullTextPause = 2000;
-
-function typeRowByRow() {
-  if (lineIndex < lines.length) {
-    const currentLine = lines[lineIndex];
-
-    if (charIndex <= currentLine.length) {
-      // Build text up to current line
-      const typedLines = lines.slice(0, lineIndex).join("<br />");
-
-      const currentTyped =
-        typedLines +
-        (lineIndex > 0 ? "<br />" : "") +
-        currentLine.slice(0, charIndex);
-
-      typingTitle.innerHTML = currentTyped;
-      charIndex++;
-      setTimeout(typeRowByRow, typingSpeed);
-    } else {
-      charIndex = 0;
-      lineIndex++;
-      setTimeout(typeRowByRow, linePause);
-    }
-  } else {
-    // Pause with full text shown, then restart
-    setTimeout(() => {
-      typingTitle.innerHTML = "";
-      lineIndex = 0;
-      charIndex = 0;
-      typeRowByRow();
-    }, fullTextPause);
-  }
+function applyTheme(theme) {
+  document.body.classList.toggle("light-theme", theme === "light");
+  themeIcon.className = theme === "light" ? "ri-sun-line" : "ri-moon-line";
+  document
+    .querySelector('meta[name="theme-color"]')
+    ?.setAttribute("content", theme === "light" ? "#fafbfc" : "#0b0d10");
 }
 
-typeRowByRow();
+let savedTheme = null;
+try {
+  savedTheme = localStorage.getItem("selected-theme");
+} catch (e) {}
+applyTheme(savedTheme || "dark");
+
+themeButton.addEventListener("click", () => {
+  const next = document.body.classList.contains("light-theme")
+    ? "dark"
+    : "light";
+  applyTheme(next);
+  try {
+    localStorage.setItem("selected-theme", next);
+  } catch (e) {}
+});
+
+/*=============== HEADER SHADOW + ACTIVE LINK ===============*/
+const header = document.getElementById("header");
+window.addEventListener(
+  "scroll",
+  () => header.classList.toggle("is-scrolled", window.scrollY > 10),
+  { passive: true },
+);
+
+const sections = document.querySelectorAll("main section[id]");
+const links = document.querySelectorAll(".nav__link");
+const spy = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        links.forEach((l) =>
+          l.classList.toggle(
+            "active-link",
+            l.getAttribute("href") === "#" + entry.target.id,
+          ),
+        );
+      }
+    });
+  },
+  { rootMargin: "-45% 0px -50% 0px" },
+);
+sections.forEach((s) => spy.observe(s));
+
+/*=============== SCROLL REVEAL ===============*/
+const reveals = document.querySelectorAll(".reveal");
+const revealObserver = new IntersectionObserver(
+  (entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        obs.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12 },
+);
+reveals.forEach((el, i) => {
+  el.style.transitionDelay = `${(i % 3) * 80}ms`;
+  revealObserver.observe(el);
+});
+
+/*=============== COUNT-UP STATS ===============*/
+const counters = document.querySelectorAll("[data-count]");
+const countObserver = new IntersectionObserver(
+  (entries, obs) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = Number(el.dataset.count);
+      const start = performance.now();
+      const duration = 1200;
+      const tick = (now) => {
+        const p = Math.min((now - start) / duration, 1);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      obs.unobserve(el);
+    });
+  },
+  { threshold: 0.6 },
+);
+counters.forEach((c) => countObserver.observe(c));
+
+/*=============== TYPING TITLE ===============*/
+const typed = document.getElementById("typing-title");
+const phrases = [
+  "building responsive systems.",
+  "shipping web & mobile apps.",
+  "turning ideas into products.",
+];
+const reduceMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
+
+if (reduceMotion) {
+  typed.textContent = phrases[0];
+} else {
+  let p = 0,
+    c = 0,
+    deleting = false;
+  (function type() {
+    const word = phrases[p];
+    typed.textContent = word.slice(0, c);
+    let delay = deleting ? 35 : 70;
+    if (!deleting && c === word.length) {
+      deleting = true;
+      delay = 1600;
+    } else if (deleting && c === 0) {
+      deleting = false;
+      p = (p + 1) % phrases.length;
+      delay = 400;
+    }
+    c += deleting ? -1 : 1;
+    setTimeout(type, delay);
+  })();
+}
+
+/*=============== PROJECT FILTER ===============*/
+const filters = document.querySelectorAll(".filter");
+const projects = document.querySelectorAll(".project");
+filters.forEach((btn) =>
+  btn.addEventListener("click", () => {
+    filters.forEach((b) => b.classList.remove("is-active"));
+    btn.classList.add("is-active");
+    const f = btn.dataset.filter;
+    projects.forEach((p) =>
+      p.classList.toggle(
+        "is-hidden",
+        f !== "all" && !p.dataset.category.split(" ").includes(f),
+      ),
+    );
+  }),
+);
+
+/*=============== CONTACT FORM ===============*/
+// Opens the visitor's email app with the message pre-filled.
+// To send straight from the page instead, swap this for EmailJS or a form
+// service such as Formspree.
+const form = document.getElementById("contact-form");
+const message = document.getElementById("contact-message");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = document.getElementById("contact-name").value.trim();
+  const email = document.getElementById("contact-email").value.trim();
+  const project = document.getElementById("contact-project").value.trim();
+
+  if (!name || !email || !project) {
+    message.className = "contact__message color-red";
+    message.textContent = "Please fill in every field.";
+    return;
+  }
+
+  const subject = encodeURIComponent(`Project enquiry from ${name}`);
+  const body = encodeURIComponent(`${project}\n\nFrom: ${name} (${email})`);
+  window.location.href = `mailto:brianmtonga592@gmail.com?subject=${subject}&body=${body}`;
+
+  message.className = "contact__message color-blue";
+  message.textContent = "Opening your email app…";
+  form.reset();
+  setTimeout(() => (message.textContent = ""), 4000);
+});
+
+/*=============== FOOTER YEAR ===============*/
+document.getElementById("year").textContent = new Date().getFullYear();
